@@ -94,8 +94,8 @@ public class GroupsManagerBinaryFileSource extends GroupsManagerFileSource {
     public void delete(EmployeeGroup employeeGroup) {
         employeeGroup.clear();
         try {
-            PrintWriter printWriter = new PrintWriter(new File(super.getPath()));
-            printWriter.write("");
+            File file = new File(super.getPath());
+            file.delete();
         }
         catch (Exception e){
             System.out.println(e.getMessage());
